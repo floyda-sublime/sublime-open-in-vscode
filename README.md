@@ -11,5 +11,27 @@ There are a default key binding and a command pallet command.
 ```json
 [
   { "keys": ["ctrl+super+v", "ctrl+super+s"], "command": "vsc_open_in_visal_studio_code" },
+
+  // There are some tool to open VScode from GitSavvy
+  // Can highly recommend GitSavvy as git integration in Sublime
+
+  // Open in vscode from GitSavvy inline diff
+  {
+    "keys": ["o"],
+    "command": "vsc_open_in_visal_studio_code",
+    "context": [
+      { "key": "setting.command_mode", "operator": "equal", "operand": false },
+      { "key": "setting.git_savvy.inline_diff_view", "operator": "equal", "operand": true }
+    ]
+  },
+  // Open in vscode from GitSavvy status
+  {
+    "keys": ["o"],
+    "command": "vsc_open_in_visal_studio_code",
+    "context": [
+      { "key": "setting.command_mode", "operator": "equal", "operand": false },
+      { "key": "setting.git_savvy.status_view", "operator": "equal", "operand": true }
+    ]
+  }
 ]
 ```
